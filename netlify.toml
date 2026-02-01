@@ -1,0 +1,50 @@
+# Netlify Configuration File
+# ملف إعدادات Netlify
+
+[build]
+  # المجلد الذي سيتم نشره
+  publish = "."
+
+# إعدادات الأمان والأداء
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # حماية من Clickjacking
+    X-Frame-Options = "SAMEORIGIN"
+    # حماية من XSS
+    X-XSS-Protection = "1; mode=block"
+    # منع تخمين نوع المحتوى
+    X-Content-Type-Options = "nosniff"
+    # سياسة الإحالة
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# تخزين مؤقت للصور
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# تخزين مؤقت لملفات CSS و JS
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# إعادة توجيه www إلى الدومين الرئيسي
+# غيّر tm-dtech.com إلى دومينك الخاص
+# [[redirects]]
+#   from = "https://www.tm-dtech.com/*"
+#   to = "https://tm-dtech.com/:splat"
+#   status = 301
+#   force = true
+
+# صفحة 404 مخصصة
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

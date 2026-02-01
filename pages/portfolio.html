@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سابقة الأعمال - TM DTech للحلول البرمجية المتطورة">
+    <meta name="keywords" content="سابقة الأعمال, أعمالنا, مشاريع, TM DTech">
+    <meta name="author" content="م. تامر محفوظ">
+    
+    <title>سابقة الأعمال | TM DTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .portfolio-item {
+            cursor: pointer;
+        }
+        
+        .portfolio-item .portfolio-overlay {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-color);
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--dark-color);
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="TM DTech Logo" onerror="this.style.display='none'">
+                    <span class="logo-text">TM <span>DTech</span></span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link">من نحن</a></li>
+                    <li><a href="../index.html#products" class="nav-link">منتجاتنا</a></li>
+                    <li><a href="../index.html#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">سابقة الأعمال</a></li>
+                    <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+                </ul>
+                
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>سابقة الأعمال</h1>
+            <p>نماذج من أعمالنا ومشاريعنا السابقة</p>
+            <div class="breadcrumb">
+                <a href="../index.html">الرئيسية</a>
+                <span>/</span>
+                <span>سابقة الأعمال</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>أعمالنا</h2>
+                <p>استعرض مجموعة من المشاريع التي قمنا بتنفيذها</p>
+            </div>
+            
+            <!-- Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="platforms">منصات تعليمية</button>
+                <button class="filter-btn" data-filter="drm">حماية المحتوى</button>
+                <button class="filter-btn" data-filter="apps">تطبيقات</button>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="platforms" onclick="openModal('project1')">
+                    <img src="../images/portfolio/project1.png" alt="منصة المايسترو" onerror="this.src='https://via.placeholder.com/400x300/2563eb/ffffff?text=منصة+المايسترو'">
+                    <div class="portfolio-overlay">
+                        <h4>منصة المايسترو التعليمية</h4>
+                        <p>منصة تعليمية متكاملة</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="platforms" onclick="openModal('project2')">
+                    <img src="../images/portfolio/project2.png" alt="منصة مستر معتز" onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=منصة+مستر+معتز'">
+                    <div class="portfolio-overlay">
+                        <h4>منصة مستر معتز</h4>
+                        <p>منصة تعليمية لتعليم الدراسات الاجتماعية</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="drm" onclick="openModal('project3')">
+                    <img src="../images/portfolio/project3.png" alt="TM DRM" onerror="this.src='https://via.placeholder.com/400x300/f59e0b/ffffff?text=TM+DRM'">
+                    <div class="portfolio-overlay">
+                        <h4>TM DRM System</h4>
+                        <p>نظام حماية المحتوى</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="apps" onclick="openModal('project4')">
+                    <img src="../images/portfolio/project4.png" alt="WebToApk" onerror="this.src='https://via.placeholder.com/400x300/8b5cf6/ffffff?text=WebToApk'">
+                    <div class="portfolio-overlay">
+                        <h4>WebToApk Builder</h4>
+                        <p>محول المواقع لتطبيقات</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="platforms" onclick="openModal('project5')">
+                    <img src="../images/portfolio/project5.png" alt="منصة تعليمية" onerror="this.src='https://via.placeholder.com/400x300/ec4899/ffffff?text=منصة+تعليمية'">
+                    <div class="portfolio-overlay">
+                        <h4>منصة تعليمية خاصة</h4>
+                        <p>منصة لأحد العملاء</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="apps" onclick="openModal('project6')">
+                    <img src="../images/portfolio/project6.png" alt="تطبيق تعليمي" onerror="this.src='https://via.placeholder.com/400x300/06b6d4/ffffff?text=تطبيق+تعليمي'">
+                    <div class="portfolio-overlay">
+                        <h4>تطبيق تعليمي أندرويد</h4>
+                        <p>تطبيق للهواتف الذكية</p>
+                        <i class="fas fa-search-plus" style="font-size: 2rem; margin-top: 10px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>آراء العملاء</h2>
+                <p>ماذا يقول عملاؤنا عن خدماتنا</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" style="text-align: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0;">أحمد محمد</h4>
+                            <small style="color: var(--gray-color);">مدرب برمجة</small>
+                        </div>
+                    </div>
+                    <p style="font-style: italic;">"برنامج TM DRM ممتاز جداً في حماية محتواي التعليمي. الدعم الفني سريع ومتعاون."</p>
+                    <div style="color: #f59e0b;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" style="text-align: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0;">محمد علي</h4>
+                            <small style="color: var(--gray-color);">صاحب منصة تعليمية</small>
+                        </div>
+                    </div>
+                    <p style="font-style: italic;">"المنصة التعليمية التي صممها لي فريق TM DTech رائعة ومتكاملة. أنصح بالتعامل معهم."</p>
+                    <div style="color: #f59e0b;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" style="text-align: right;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0;">سارة أحمد</h4>
+                            <small style="color: var(--gray-color);">معلمة</small>
+                        </div>
+                    </div>
+                    <p style="font-style: italic;">"WebToApk سهل الاستخدام وساعدني في تحويل موقعي لتطبيق بسرعة. شكراً TM DTech!"</p>
+                    <div style="color: #f59e0b;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--gradient-primary); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;">هل تريد مشروعاً مميزاً مثل هذه المشاريع؟</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 30px;">تواصل معنا اليوم وحول فكرتك إلى واقع</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn" style="background: white; color: var(--primary-color);">
+                    <i class="fas fa-envelope"></i>
+                    تواصل معنا
+                </a>
+                <a href="tel:01099710752" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
+                    <i class="fas fa-phone"></i>
+                    01099710752
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">عنوان المشروع</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-image" id="modalImage">
+                <p id="modalDescription"></p>
+                <div id="modalDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-text" style="color: white;">TM <span style="color: var(--secondary-color);">DTech</span></span>
+                    </a>
+                    <p>شركة مصرية متخصصة في تقديم حلول برمجية متطورة في مجال التعليم والتدريب والبرمجة.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="portfolio.html">سابقة الأعمال</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>منتجاتنا</h4>
+                    <ul>
+                        <li><a href="tm-drm.html">TM DRM</a></li>
+                        <li><a href="webtoapk.html">WebToApk</a></li>
+                        <li><a href="platforms.html">المنصات التعليمية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fas fa-user"></i> م. تامر محفوظ</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:01099710752">01099710752</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> شبرابيل، السنطة، الغربية، مصر</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 TM DTech - Smart Digital Solutions. جميع الحقوق محفوظة.</p>
+                <p style="margin-top: 10px;">
+                    <a href="privacy.html" style="color: rgba(255,255,255,0.7);">سياسة الخصوصية</a> | 
+                    <a href="terms.html" style="color: rgba(255,255,255,0.7);">سياسة الاستخدام</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Project Data
+        const projects = {
+            project1: {
+                title: 'منصة المايسترو التعليمية',
+                image: '../images/portfolio/project1.png',
+                description: 'منصة تعليمية متكاملة تم تصميمها لأحد المدربين، تشمل نظام إدارة الدورات والطلاب والاشتراكات.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>نظام إدارة الدورات</li>
+                        <li>نظام اشتراكات متقدم</li>
+                        <li>بوابات دفع متعددة</li>
+                        <li>تطبيق ديسكتوب</li>
+                        <li>حماية TM DRM</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>PHP, MySQL, JavaScript, Electron</p>
+                `
+            },
+            project2: {
+                title: 'منصة تامر محفوظ',
+                image: '../images/portfolio/project2.png',
+                description: 'منصة تعليمية متخصصة في تعليم البرمجة وتطوير التطبيقات.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>دورات برمجة متنوعة</li>
+                        <li>نظام تتبع التقدم</li>
+                        <li>شهادات إتمام</li>
+                        <li>منتدى للنقاش</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>Laravel, Vue.js, MySQL</p>
+                `
+            },
+            project3: {
+                title: 'TM DRM System',
+                image: '../images/portfolio/project3.png',
+                description: 'نظام متكامل لتشفير وحماية المحتوى الرقمي من النسخ والقرصنة.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>تشفير AES-256</li>
+                        <li>حماية من تسجيل الشاشة</li>
+                        <li>نظام ترخيص متقدم</li>
+                        <li>ربط بالجهاز</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>C#, .NET, FFmpeg</p>
+                `
+            },
+            project4: {
+                title: 'WebToApk Builder',
+                image: '../images/portfolio/project4.png',
+                description: 'برنامج لتحويل المواقع الإلكترونية إلى تطبيقات أندرويد احترافية.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>تحويل سريع وسهل</li>
+                        <li>دعم إشعارات Push</li>
+                        <li>دعم إعلانات AdMob</li>
+                        <li>تخصيص كامل</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>Java, Android SDK, Gradle</p>
+                `
+            },
+            project5: {
+                title: 'منصة تعليمية خاصة',
+                image: '../images/portfolio/project5.png',
+                description: 'منصة تعليمية مخصصة تم تصميمها حسب متطلبات العميل.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>تصميم مخصص</li>
+                        <li>نظام اختبارات</li>
+                        <li>تقارير تفصيلية</li>
+                        <li>تطبيق موبايل</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>React, Node.js, MongoDB</p>
+                `
+            },
+            project6: {
+                title: 'تطبيق تعليمي أندرويد',
+                image: '../images/portfolio/project6.png',
+                description: 'تطبيق تعليمي للهواتف الذكية مع مميزات متقدمة.',
+                details: `
+                    <h4>المميزات:</h4>
+                    <ul style="padding-right: 20px; margin-bottom: 20px;">
+                        <li>واجهة سهلة الاستخدام</li>
+                        <li>تحميل للمشاهدة لاحقاً</li>
+                        <li>إشعارات Push</li>
+                        <li>وضع ليلي</li>
+                    </ul>
+                    <h4>التقنيات المستخدمة:</h4>
+                    <p>Flutter, Firebase, Dart</p>
+                `
+            }
+        };
+        
+        // Modal Functions
+        function openModal(projectId) {
+            const project = projects[projectId];
+            if (project) {
+                document.getElementById('modalTitle').textContent = project.title;
+                document.getElementById('modalImage').src = project.image;
+                document.getElementById('modalImage').onerror = function() {
+                    this.src = 'https://via.placeholder.com/800x400/2563eb/ffffff?text=' + encodeURIComponent(project.title);
+                };
+                document.getElementById('modalDescription').textContent = project.description;
+                document.getElementById('modalDetails').innerHTML = project.details;
+                document.getElementById('projectModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal on outside click
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

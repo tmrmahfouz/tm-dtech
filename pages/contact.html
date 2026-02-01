@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تواصل معنا - TM DTech للحلول البرمجية المتطورة">
+    <meta name="keywords" content="تواصل معنا, TM DTech, دعم فني, استفسارات">
+    <meta name="author" content="م. تامر محفوظ">
+    
+    <title>تواصل معنا | TM DTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="TM DTech Logo" onerror="this.style.display='none'">
+                    <span class="logo-text">TM <span>DTech</span></span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link">من نحن</a></li>
+                    <li><a href="../index.html#products" class="nav-link">منتجاتنا</a></li>
+                    <li><a href="../index.html#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="portfolio.html" class="nav-link">سابقة الأعمال</a></li>
+                    <li><a href="contact.html" class="nav-link active">تواصل معنا</a></li>
+                </ul>
+                
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>تواصل معنا</h1>
+            <p>نحن هنا لمساعدتك والإجابة على استفساراتك</p>
+            <div class="breadcrumb">
+                <a href="../index.html">الرئيسية</a>
+                <span>/</span>
+                <span>تواصل معنا</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <p style="margin-bottom: 30px;">يسعدنا تواصلك معنا. يمكنك الاتصال بنا عبر أي من الطرق التالية:</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>المدير</h4>
+                            <p>م. تامر محفوظ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>الهاتف</h4>
+                            <p><a href="tel:01099710752">01099710752</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>واتساب</h4>
+                            <p><a href="https://wa.me/201099710752" target="_blank">01099710752</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>العنوان</h4>
+                            <p>شبرابيل، السنطة، الغربية، مصر</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div style="margin-top: 40px;">
+                        <h4 style="margin-bottom: 15px;">تابعنا على</h4>
+                        <div class="footer-social" style="justify-content: flex-start;">
+                            <a href="#" aria-label="Facebook" style="background: var(--primary-color);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter" style="background: var(--primary-color);"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn" style="background: var(--primary-color);"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube" style="background: var(--primary-color);"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px;">أرسل لنا رسالة</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع *</label>
+                            <select id="subject" name="subject" required style="width: 100%; padding: 12px 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; font-family: inherit; background: white;">
+                                <option value="">اختر الموضوع</option>
+                                <option value="inquiry">استفسار عام</option>
+                                <option value="tm-drm">استفسار عن TM DRM</option>
+                                <option value="webtoapk">استفسار عن WebToApk</option>
+                                <option value="platforms">طلب منصة تعليمية</option>
+                                <option value="support">دعم فني</option>
+                                <option value="license">طلب ترخيص</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل سريع</h2>
+                <p>اختر الطريقة المناسبة للتواصل معنا</p>
+            </div>
+            
+            <div class="services-grid">
+                <a href="tel:01099710752" class="service-card" style="text-decoration: none;">
+                    <div class="service-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>اتصل بنا</h3>
+                    <p>اتصل مباشرة للحصول على استجابة فورية</p>
+                    <span style="color: var(--primary-color); font-weight: 600;">01099710752</span>
+                </a>
+                
+                <a href="https://wa.me/201099710752" target="_blank" class="service-card" style="text-decoration: none;">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>واتساب</h3>
+                    <p>راسلنا على واتساب للرد السريع</p>
+                    <span style="color: #25d366; font-weight: 600;">ابدأ المحادثة</span>
+                </a>
+                
+                <a href="mailto:info@tmdtech.com" class="service-card" style="text-decoration: none;">
+                    <div class="service-icon" style="background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>أرسل لنا بريداً إلكترونياً</p>
+                    <span style="color: #ea4335; font-weight: 600;">info@tmdtech.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <p>إجابات على الأسئلة الأكثر شيوعاً</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="service-card" style="text-align: right; margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-question-circle" style="margin-left: 10px;"></i>
+                        كيف يمكنني شراء ترخيص TM DRM؟
+                    </h4>
+                    <p style="margin: 0;">يمكنك التواصل معنا عبر الهاتف أو واتساب للحصول على ترخيص TM DRM. سنقوم بإرشادك خلال عملية الشراء والتفعيل.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: right; margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-question-circle" style="margin-left: 10px;"></i>
+                        هل يوجد نسخة تجريبية من البرامج؟
+                    </h4>
+                    <p style="margin: 0;">نعم، نوفر نسخ تجريبية محدودة من برامجنا. تواصل معنا للحصول على نسخة تجريبية.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: right; margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-question-circle" style="margin-left: 10px;"></i>
+                        ما هي تكلفة تصميم منصة تعليمية؟
+                    </h4>
+                    <p style="margin: 0;">تختلف التكلفة حسب متطلبات المشروع والمميزات المطلوبة. تواصل معنا للحصول على عرض سعر مخصص.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: right; margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-question-circle" style="margin-left: 10px;"></i>
+                        هل تقدمون دعماً فنياً بعد الشراء؟
+                    </h4>
+                    <p style="margin: 0;">نعم، نقدم دعماً فنياً مستمراً لجميع عملائنا. يمكنك التواصل معنا في أي وقت للحصول على المساعدة.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: right;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">
+                        <i class="fas fa-question-circle" style="margin-left: 10px;"></i>
+                        ما هي طرق الدفع المتاحة؟
+                    </h4>
+                    <p style="margin: 0;">نقبل الدفع عبر التحويل البنكي، فودافون كاش، وطرق أخرى. تواصل معنا لمعرفة التفاصيل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>موقعنا</h2>
+                <p>شبرابيل، السنطة، الغربية، مصر</p>
+            </div>
+            
+            <div style="background: #e2e8f0; border-radius: var(--border-radius); height: 400px; display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center; color: var(--gray-color);">
+                    <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <p>خريطة الموقع</p>
+                    <small>يمكنك إضافة خريطة Google Maps هنا</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-text" style="color: white;">TM <span style="color: var(--secondary-color);">DTech</span></span>
+                    </a>
+                    <p>شركة مصرية متخصصة في تقديم حلول برمجية متطورة في مجال التعليم والتدريب والبرمجة.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="portfolio.html">سابقة الأعمال</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>منتجاتنا</h4>
+                    <ul>
+                        <li><a href="tm-drm.html">TM DRM</a></li>
+                        <li><a href="webtoapk.html">WebToApk</a></li>
+                        <li><a href="platforms.html">المنصات التعليمية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fas fa-user"></i> م. تامر محفوظ</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:01099710752">01099710752</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> شبرابيل، السنطة، الغربية، مصر</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 TM DTech - Smart Digital Solutions. جميع الحقوق محفوظة.</p>
+                <p style="margin-top: 10px;">
+                    <a href="privacy.html" style="color: rgba(255,255,255,0.7);">سياسة الخصوصية</a> | 
+                    <a href="terms.html" style="color: rgba(255,255,255,0.7);">سياسة الاستخدام</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

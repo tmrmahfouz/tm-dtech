@@ -1,0 +1,8 @@
+# Netlify Redirects File
+# ملف إعادة التوجيه
+
+# إعادة توجيه www إلى الدومين الرئيسي (فعّل هذا بعد ربط الدومين)
+# https://www.yourdomain.com/* https://yourdomain.com/:splat 301!
+
+# صفحة 404
+/*    /index.html   404
